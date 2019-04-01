@@ -7,8 +7,8 @@ namespace Lemonade
 {
     public class Customer
     {
-        private int Susceptibility;
-        private int MoneyInPocket;
+        public int Susceptibility;
+        public double MoneyInPocket;
 
         public void BuyLemonade()
         {

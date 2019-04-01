@@ -11,10 +11,11 @@ namespace Lemonade
         public Day day = new Day();
         public int Durration;
         public string Weather;
+        public int Temperature;
+        Random random = new Random();
 
         public string GetWeather()
-        {
-            Random random = new Random();
+        {           
             int RandomWeather = random.Next(1, 5);
 
             switch (RandomWeather)
@@ -34,6 +35,7 @@ namespace Lemonade
                 default:
                     break;
             }
+            Temperature = random.Next(1, 100);
             return Weather;
         }
 
@@ -45,6 +47,7 @@ namespace Lemonade
 
         public int GetDemand()
         {
+            //based on weather, temperature, and sugar content
             throw new System.NotImplementedException();
         }
 
@@ -58,6 +61,7 @@ namespace Lemonade
         public void StartSellingLemonade()
         {
             GetWeather();
+            GetDemand();
             UserInterface.DisplayLemonadeStand();
         }
     }

@@ -7,13 +7,13 @@ namespace Lemonade
 {
     public static class UserInterface
     {
-        public static void DisplayStore()
+        public static void DisplayStore(Inventory inventory)
         {
             Console.WriteLine("You have:");
-            Console.WriteLine("x Paper cups");
-            Console.WriteLine("x Lemons");
-            Console.WriteLine("x Cups of Sugar");
-            Console.WriteLine("x Ice Cubes"+'\n');
+            Console.WriteLine(inventory.Cups + " Paper cups");
+            Console.WriteLine(inventory.Lemons +" Lemons");
+            Console.WriteLine(inventory.Sugar + " Cups of Sugar");
+            Console.WriteLine(inventory.Ice + " Ice Cubes"+'\n');
             Console.WriteLine("Enter the name of the item you wish to purchase, or enter none to continue");
         }
 

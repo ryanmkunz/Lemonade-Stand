@@ -20,13 +20,13 @@ namespace Lemonade
         public int IcePerPitcher;
 
         public void Resupply()
-        {           
-            UserInterface.DisplayStore();
+        {
+            UserInterface.DisplayStore(inventory);
             SupplyOrder = Console.ReadLine();
 
             while (SupplyOrder != "none")
             {
-                UserInterface.DisplayQuantitiyCheck(SupplyOrder); //move this
+                UserInterface.DisplayQuantitiyCheck(SupplyOrder);
                 OrderQuantity = int.Parse(Console.ReadLine());
 
                 switch (SupplyOrder)
@@ -69,7 +69,8 @@ namespace Lemonade
 
         public void SetPrice()
         {
-            throw new System.NotImplementedException();
+            UserInterface.DisplayPriceChange();
+            PricePerCup = double.Parse(Console.ReadLine());
         }
 
         public void SetRecipe()
@@ -87,8 +88,7 @@ namespace Lemonade
                 switch (RecipeItem)
                 {
                     case "price":
-                        UserInterface.DisplayPriceChange();
-                        PricePerCup = double.Parse(Console.ReadLine());
+                        SetPrice();
                         break;
                     case "lemons":
                         UserInterface.DisplayQuantitiyCheck(RecipeItem);
