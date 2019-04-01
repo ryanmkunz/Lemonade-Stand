@@ -9,7 +9,13 @@ namespace Lemonade
     {
         public void DisplayStore()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("You have:");
+            Console.WriteLine("x Paper cups");
+            Console.WriteLine("x Lemons");
+            Console.WriteLine("x Cups of Sugar");
+            Console.WriteLine("x Ice Cubes"+'\n');
+
+            Console.WriteLine("Enter the name of the item you wish to purchase, or enter none to continue");
         }
 
         public void DisplayPriceAndQuality()
@@ -35,6 +41,12 @@ namespace Lemonade
         public void DisplayWeatherForcast()
         {
             throw new System.NotImplementedException();
+        }
+
+        public void DisplayDurrationMenu()
+        {
+            Console.WriteLine("How long would you like to play?");
+            Console.WriteLine("7 Days , 14 Days, 30 Days");
         }
     }
 }
