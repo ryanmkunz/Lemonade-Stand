@@ -14,13 +14,17 @@ namespace Lemonade
             Console.WriteLine("x Lemons");
             Console.WriteLine("x Cups of Sugar");
             Console.WriteLine("x Ice Cubes"+'\n');
-
             Console.WriteLine("Enter the name of the item you wish to purchase, or enter none to continue");
         }
 
-        public static void DisplayPriceAndQuality()
+        public static void DisplayPriceAndQuality(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Price/Quality control");
+            Console.WriteLine("Price per cup: $" + lemonadePrice);
+            Console.WriteLine("Lemons per pitcher: " + lemonsPerPitcher);
+            Console.WriteLine("Sugar per pitcher: " + sugarPerPitcher);
+            Console.WriteLine("Ice cubes per pitcher: " + icePerPitcher+'\n');
+            Console.WriteLine("Enter the name of the item you would like to change, or enter none to continue");
         }
 
         public static void DisplayLemonadeStand()
@@ -51,12 +55,17 @@ namespace Lemonade
 
         public static void DisplayQuantitiyCheck(string itemName)
         {
-            Console.WriteLine("Enter the quantity of "+itemName+" you would like to purchase");
+            Console.WriteLine("Enter the quantity of "+itemName+" you would like");
         }
 
         public static void DisplayReceipt(string itemName, int quantity, double totalCost)
         {
             Console.WriteLine("Purchased "+quantity+" "+itemName+"for $"+totalCost);
+        }
+
+        public static void DisplayPriceChange()
+        {
+            Console.WriteLine("Enter new price per cup");
         }
     }
 }

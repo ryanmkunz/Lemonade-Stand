@@ -10,9 +10,14 @@ namespace Lemonade
         private string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
-        private string Name;
+        private string RecipeItem;
+        public string Name;
         public Inventory inventory = new Inventory();
         public Store store = new Store();
+        public double PricePerCup;
+        public int LemonsPerPitcher;
+        public int SugarPerPitcher;
+        public int IcePerPitcher;
 
         public void Resupply()
         {
@@ -52,8 +57,7 @@ namespace Lemonade
                     default:
                         break;
                 }
-            } while (SupplyOrder != "none");
-            
+            } while (SupplyOrder != "none");           
         }
 
         public void SellLemonade()
@@ -69,7 +73,40 @@ namespace Lemonade
 
         public void SetRecipe()
         {
-            throw new System.NotImplementedException();
+            PricePerCup = 0.25;
+            LemonsPerPitcher = 4;
+            SugarPerPitcher = 4;
+            IcePerPitcher = 4;
+
+            do
+            {
+                UserInterface.DisplayPriceAndQuality(PricePerCup, LemonsPerPitcher, SugarPerPitcher, IcePerPitcher);
+                RecipeItem = Console.ReadLine();
+                
+                switch (RecipeItem)
+                {
+                    case "price":
+                        UserInterface.DisplayPriceChange();
+                        PricePerCup = double.Parse(Console.ReadLine());
+                        break;
+                    case "lemons":
+                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                        LemonsPerPitcher = int.Parse(Console.ReadLine());                        
+                        break;
+                    case "sugar":
+                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                        SugarPerPitcher = int.Parse(Console.ReadLine());
+                        break;
+                    case "ice":
+                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                        IcePerPitcher = int.Parse(Console.ReadLine());
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (RecipeItem != "none");
+            
         }
     }
 }
