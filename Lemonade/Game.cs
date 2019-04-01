@@ -7,13 +7,34 @@ namespace Lemonade
 {
     public class Game
     {
-        public Player player1 = new Player();
+        public Player player1 = new Player();       
+        public Day day = new Day();
         public int Durration;
-        
+        public string Weather;
 
         public string GetWeather()
         {
-            throw new System.NotImplementedException();
+            Random random = new Random();
+            int RandomWeather = random.Next(1, 5);
+
+            switch (RandomWeather)
+            {
+                case 1:
+                    Weather = "sunny";
+                    break;
+                case 2:
+                    Weather = "partly cloudy";
+                    break;
+                case 3:
+                    Weather = "cloudy";
+                    break;
+                case 4:
+                    Weather = "rainy";
+                    break;
+                default:
+                    break;
+            }
+            return Weather;
         }
 
         public void GetGameDurration()
@@ -32,6 +53,11 @@ namespace Lemonade
             GetGameDurration();
             player1.Resupply();
             player1.SetRecipe();
+            StartSellingLemonade();
+        }
+        public void StartSellingLemonade()
+        {
+            GetWeather();
             UserInterface.DisplayLemonadeStand();
         }
     }
