@@ -7,19 +7,26 @@ namespace Lemonade
 {
     public class Player
     {
+        private string SupplyOrder;
         private string Name;
-
-        public Inventory Inventory
-        {
-            get => default(Inventory);
-            set
-            {
-            }
-        }
+        public Inventory inventory = new Inventory();
 
         public void Resupply()
         {
-            throw new System.NotImplementedException();
+            SupplyOrder = Console.ReadLine();
+            switch (SupplyOrder)
+            {
+                case "cups":
+                    break;
+                case "lemons":
+                    break;
+                case "sugar":
+                    break;
+                case "ice":
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void SellLemonade()

@@ -7,14 +7,14 @@ namespace Lemonade
 {
     public class Inventory
     {
-        private int Cups;
-        private int Lemons;
-        private int Sugar;
-        private int Ice;
-        private double PricePerCup;
-        private int LemonsPerPitcher;
-        private int SugarPerPitcher;
-        private int IcePerPitcher;
-        private double Money;
+        public int Cups;
+        public int Lemons;
+        public int Sugar;
+        public int Ice;
+        public double PricePerCup;
+        public int LemonsPerPitcher;
+        public int SugarPerPitcher;
+        public int IcePerPitcher;
+        public double Money;
     }
 }
