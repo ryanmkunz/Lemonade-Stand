@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lemonade.Weather">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAAEAAA=</HashCode>
+      <FileName>Weather.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lemonade.Customer">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAIAQAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lemonade.Game">
+    <Position X="6" Y="1.5" Width="1.75" />
+    <AssociationLine Name="Player" Type="Lemonade.Player" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.875" Y="3.18" />
+        <Point X="6.875" Y="4.316" />
+        <Point X="5.75" Y="4.316" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAIEAAEAAABAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Player" />
+      <Property Name="Day" />
+      <Property Name="Store" />
+      <Property Name="UserInterface" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Lemonade.Inventory">
+    <Position X="1.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCQAAAIAAAAAAAAAAAAAAQAIAAAAAAACAAAAAUAA=</HashCode>
+      <FileName>Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lemonade.Player">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAAAAAABAAAAAAQAAAAAAAAAAAAACgAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Inventory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Lemonade.Store">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAABAAAAAQAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Store.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lemonade.Day">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAABAAAAAEACAAAQAAAQCAAAAAAAAAA=</HashCode>
+      <FileName>Day.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Weather" />
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Lemonade.UserInterface">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAgAAAAAAAAAAAAQgAAAQAAAAAAAAA=</HashCode>
+      <FileName>UserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
