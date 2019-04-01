@@ -20,12 +20,13 @@ namespace Lemonade
         public int IcePerPitcher;
 
         public void Resupply()
-        {
-            do
+        {           
+            UserInterface.DisplayStore();
+            SupplyOrder = Console.ReadLine();
+
+            while (SupplyOrder != "none")
             {
-                UserInterface.DisplayStore();
-                SupplyOrder = Console.ReadLine();
-                UserInterface.DisplayQuantitiyCheck(SupplyOrder);
+                UserInterface.DisplayQuantitiyCheck(SupplyOrder); //move this
                 OrderQuantity = int.Parse(Console.ReadLine());
 
                 switch (SupplyOrder)
@@ -57,7 +58,7 @@ namespace Lemonade
                     default:
                         break;
                 }
-            } while (SupplyOrder != "none");           
+            }                                     
         }
 
         public void SellLemonade()
@@ -105,8 +106,7 @@ namespace Lemonade
                         break;
                 }
 
-            } while (RecipeItem != "none");
-            
+            } while (RecipeItem != "none");            
         }
     }
 }

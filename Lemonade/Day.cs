@@ -12,21 +12,8 @@ namespace Lemonade
         private double TotalCost;
         private double Profit;
         private int TimeOfDay;
+        public Weather Weather;
+        public Customer Customer;
 
-        public Weather Weather
-        {
-            get => default(Weather);
-            set
-            {
-            }
-        }
-
-        public Customer Customer
-        {
-            get => default(Customer);
-            set
-            {
-            }
-        }
     }
 }

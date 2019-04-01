@@ -29,7 +29,7 @@ namespace Lemonade
 
         public static void DisplayLemonadeStand()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("TODO: This is the point where the lemonade stand shows up");
         }
 
         public static void DisplayDayEndReport()

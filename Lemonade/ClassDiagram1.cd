@@ -16,43 +16,40 @@
   </Class>
   <Class Name="Lemonade.Game">
     <Position X="6" Y="1.5" Width="1.75" />
-    <AssociationLine Name="Player" Type="Lemonade.Player" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="player1" Type="Lemonade.Player" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.875" Y="3.18" />
-        <Point X="6.875" Y="4.316" />
-        <Point X="5.75" Y="4.316" />
+        <Point X="6.875" Y="3.632" />
+        <Point X="6.875" Y="5.431" />
+        <Point X="5.75" Y="5.431" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EAAAAAEAIEAAEAAABAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>gAAAAAAAAEAAEAAABAAAAAAAAAAAAAEAAAQAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Player" />
-      <Property Name="Day" />
-      <Property Name="Store" />
-      <Property Name="UserInterface" />
+      <Field Name="player1" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.Inventory">
-    <Position X="1.75" Y="3" Width="1.5" />
+    <Position X="0.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQCQAAAIAAAAAAAAAAAAAAQAIAAAAAAACAAAAAUAA=</HashCode>
+      <HashCode>AAAQCAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAA=</HashCode>
       <FileName>Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Player">
-    <Position X="4.25" Y="3.25" Width="1.5" />
+    <Position X="4.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAgAAAAAAAAABAAAAAAQAAAAAAAAAAAAACgAAAAA=</HashCode>
+      <HashCode>AAQAAwAABAAAAAABAAAAAAQBQAIAAAADAACACABAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Inventory" />
+      <Field Name="inventory" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.Store">
-    <Position X="8.5" Y="3.75" Width="1.5" />
+    <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAABAAAAAQAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Store.cs</FileName>
@@ -65,14 +62,14 @@
       <FileName>Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Weather" />
-      <Property Name="Customer" />
+      <Field Name="Weather" />
+      <Field Name="Customer" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.UserInterface">
-    <Position X="2.75" Y="0.5" Width="2" />
+    <Position X="3.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAQAAAAAAAgAAAAAAAAAAAAQgAAAQAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAQAAAAAAAgAAAAAAAEAgAAQwgAAQAAAAAAAAA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>

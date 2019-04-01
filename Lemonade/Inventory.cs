@@ -11,10 +11,6 @@ namespace Lemonade
         public int Lemons;
         public int Sugar;
         public int Ice;
-        public double PricePerCup;
-        public int LemonsPerPitcher;
-        public int SugarPerPitcher;
-        public int IcePerPitcher;
         public double Money;
     }
 }

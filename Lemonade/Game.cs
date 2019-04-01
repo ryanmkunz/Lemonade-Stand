@@ -7,46 +7,19 @@ namespace Lemonade
 {
     public class Game
     {
-        public Player Player
-        {
-            get => default(Player);
-            set
-            {
-            }
-        }
-
-        public Day Day
-        {
-            get => default(Day);
-            set
-            {
-            }
-        }
-
-        public Store Store
-        {
-            get => default(Store);
-            set
-            {
-            }
-        }
-
-        public UserInterface UserInterface
-        {
-            get => default(UserInterface);
-            set
-            {
-            }
-        }
+        public Player player1 = new Player();
+        public int Durration;
+        
 
         public string GetWeather()
         {
             throw new System.NotImplementedException();
         }
 
-        public int GetGameDurration()
+        public void GetGameDurration()
         {
-            throw new System.NotImplementedException();
+            UserInterface.DisplayDurrationMenu();
+            Durration = int.Parse(Console.ReadLine());            
         }
 
         public int GetDemand()
@@ -54,9 +27,12 @@ namespace Lemonade
             throw new System.NotImplementedException();
         }
 
-        public void FindCustomers()
+        public void RunGame()
         {
-            throw new System.NotImplementedException();
+            GetGameDurration();
+            player1.Resupply();
+            player1.SetRecipe();
+            UserInterface.DisplayLemonadeStand();
         }
     }
 }
