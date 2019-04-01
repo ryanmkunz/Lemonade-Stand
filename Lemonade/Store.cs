@@ -7,9 +7,9 @@ namespace Lemonade
 {
     public class Store
     {
-        private double CupPrice;
-        private double LemonPrice;
-        private double SugarPrice;
-        private double IcePrice;
+        public double CupPrice;
+        public double LemonPrice;
+        public double SugarPrice;
+        public double IcePrice;
     }
 }
