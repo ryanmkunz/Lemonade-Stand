@@ -9,15 +9,23 @@ namespace Lemonade
     {
         public int Susceptibility;
         public double MoneyInPocket;
+        private Random random = new Random();
 
         public void BuyLemonade()
         {
             throw new System.NotImplementedException();
         }
 
-        public bool IsBuying()
+        public bool IsBuying(int demand)
         {
-            throw new System.NotImplementedException();
+            if (random.Next(1, 11) <= demand)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
