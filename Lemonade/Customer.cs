@@ -7,14 +7,7 @@ namespace Lemonade
 {
     public class Customer
     {
-        public int Susceptibility;
-        public double MoneyInPocket;
         private Random random = new Random();
-
-        public void BuyLemonade()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public bool IsBuying(int demand)
         {

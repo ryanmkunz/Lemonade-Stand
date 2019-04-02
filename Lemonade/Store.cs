@@ -7,9 +7,9 @@ namespace Lemonade
 {
     public class Store
     {
-        public double CupPrice;
-        public double LemonPrice;
-        public double SugarPrice;
-        public double IcePrice;
+        public double CupPrice = 0.08;
+        public double LemonPrice = 0.07;
+        public double SugarPrice = 0.06;
+        public double IcePrice = 0.09;
     }
 }

@@ -14,6 +14,7 @@ namespace Lemonade
             Console.WriteLine(inventory.Lemons +" Lemons");
             Console.WriteLine(inventory.Sugar + " Cups of Sugar");
             Console.WriteLine(inventory.Ice + " Ice Cubes"+'\n');
+            Console.WriteLine("Money: $" + inventory.Money + '\n');
             Console.WriteLine("Enter the name of the item you wish to purchase, or enter none to continue");
         }
 
@@ -27,14 +28,11 @@ namespace Lemonade
             Console.WriteLine("Enter the name of the item you would like to change, or enter none to continue");
         }
 
-        public static void DisplayLemonadeStand()
+        public static void DisplayDayEndReport(string weather, int temperature, int sales, double costs, double pricePerCup)
         {
-            Console.WriteLine("TODO: This is the point where the lemonade stand shows up");
-        }
-
-        public static void DisplayDayEndReport()
-        {
-            throw new System.NotImplementedException();
+            Console.WriteLine('\n' + "It was " + temperature + " degrees and " + weather + " today");
+            Console.WriteLine("Sold " + sales + " cups of lemonade");
+            Console.WriteLine("You made $" + ((sales * pricePerCup) - costs)+'\n');
         }
 
         public static void DisplayWeekEndReport()

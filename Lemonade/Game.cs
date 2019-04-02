@@ -31,6 +31,9 @@ namespace Lemonade
             //based on weather, temperature, and sugar content
             //Maximum demand is 10, minimum 1
             //+3 for weather, temp, and sugar each
+
+            //TODO: price should have an impact on demand... 
+
             Demand = 0;
             int sugarBaseline = 4;
             Demand += day.weather.RandomWeather; //RandomWeather is between 1 and 4
@@ -50,7 +53,19 @@ namespace Lemonade
         {
             GetWeather();
             GetDemand();
-            UserInterface.DisplayLemonadeStand();
+            day.GetDailySales(Demand); 
+            
+            UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, player1.TotalOrderCost, player1.PricePerCup);
+            Console.ReadLine();
+        }
+
+        public void UpdateInventory()
+        {
+            //TODO: use pitchers
+            player1.inventory.Cups -= day.CupsSold;
+            player1.inventory.Lemons -= day.CupsSold / player1.LemonsPerPitcher;
+            player1.inventory.Sugar -= day.CupsSold / player1.SugarPerPitcher;
+            player1.inventory.Ice -= day.CupsSold / player1.IcePerPitcher;
         }
     }
 }

@@ -10,10 +10,11 @@ namespace Lemonade
         private string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
+        public double TotalOrderCost;
         private string RecipeItem;
         public string Name;
         public Inventory inventory = new Inventory();
-        public Store Store = new Store();        
+        public Store store = new Store();        
         public double PricePerCup;
         public int LemonsPerPitcher;
         public int SugarPerPitcher;
@@ -24,7 +25,8 @@ namespace Lemonade
         
 
         public void Resupply()
-        {          
+        {
+            TotalOrderCost = 0;
             while (SupplyOrder != "none")
             {
                 UserInterface.DisplayStore(inventory);
@@ -40,24 +42,28 @@ namespace Lemonade
                             OrderCost = OrderQuantity * store.CupPrice;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Cups", OrderQuantity, OrderCost);
+                            TotalOrderCost += OrderCost;
                             break;
                         case "lemons":
                             inventory.Lemons += OrderQuantity;
                             OrderCost = OrderQuantity * store.LemonPrice;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Lemons", OrderQuantity, OrderCost);
+                            TotalOrderCost += OrderCost;
                             break;
                         case "sugar":
                             inventory.Sugar += OrderQuantity;
                             OrderCost = OrderQuantity * store.SugarPrice;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Cups of Sugar", OrderQuantity, OrderCost);
+                            TotalOrderCost += OrderCost;
                             break;
                         case "ice":
                             inventory.Ice += OrderQuantity;
                             OrderCost = OrderQuantity * store.IcePrice;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Ice cubes", OrderQuantity, OrderCost);
+                            TotalOrderCost += OrderCost;
                             break;
                         default:
                             break;
@@ -69,12 +75,6 @@ namespace Lemonade
                 }
                 
             }                                     
-        }
-
-        public void SellLemonade()
-        {
-            
-            throw new System.NotImplementedException();
         }
 
         public void SetPrice()
@@ -120,6 +120,7 @@ namespace Lemonade
         }
 
         public bool CheckForPitchers()
+        //might not need this method
         {
             if (inventory.Cups < CupsPerPitcher || inventory.Lemons < LemonsPerPitcher || inventory.Sugar < SugarPerPitcher || inventory.Ice < IcePerPitcher)
             {
@@ -127,5 +128,6 @@ namespace Lemonade
             }
             return Pitchers; 
         }
+
     }
 }

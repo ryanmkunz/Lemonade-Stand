@@ -7,20 +7,19 @@ namespace Lemonade
 {
     public class Weather
     {
-        private int Temperature;
-        private int Forcast;
+        public int Temperature;
         public string WeatherForcast;
+        public int RandomWeather;
         Random random = new Random();
-
 
         public void GetFutureForcast()
         {
             throw new System.NotImplementedException();
         }
 
-        public string GetTodaysForcast()
+        public void GetTodaysForcast()
         {
-            int RandomWeather = random.Next(1, 5);
+            RandomWeather = random.Next(1, 5);
 
             switch (RandomWeather)
             {
@@ -38,14 +37,12 @@ namespace Lemonade
                     break;
                 default:
                     break;
-            }
-            Temperature = random.Next(1, 100);
-            return WeatherForcast;
+            }           
         }
 
         public void GetTemperature()
         {
-            throw new System.NotImplementedException();
+            Temperature = random.Next(70, 100);
         }
     }
 }

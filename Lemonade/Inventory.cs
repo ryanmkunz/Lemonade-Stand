@@ -11,6 +11,6 @@ namespace Lemonade
         public int Lemons;
         public int Sugar;
         public int Ice;
-        public double Money;
+        public double Money = 20.00;
     }
 }
