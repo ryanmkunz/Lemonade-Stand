@@ -8,35 +8,16 @@ namespace Lemonade
     public class Game
     {
         public Player player1 = new Player();       
-        public Day day = new Day();
-        public int Durration;
-        public string Weather;
+        public int Durration;        
         public int Temperature;
-        Random random = new Random();
+        public int Demand;
+        public Day day = new Day();
 
-        public string GetWeather()
-        {           
-            int RandomWeather = random.Next(1, 5);
-
-            switch (RandomWeather)
-            {
-                case 1:
-                    Weather = "sunny";
-                    break;
-                case 2:
-                    Weather = "partly cloudy";
-                    break;
-                case 3:
-                    Weather = "cloudy";
-                    break;
-                case 4:
-                    Weather = "rainy";
-                    break;
-                default:
-                    break;
-            }
-            Temperature = random.Next(1, 100);
-            return Weather;
+        public void GetWeather()
+        {
+            day.weather.GetTodaysForcast();
+            day.weather.GetTemperature();
+            //day.weather.GetFutureForcast();
         }
 
         public void GetGameDurration()
@@ -48,7 +29,14 @@ namespace Lemonade
         public int GetDemand()
         {
             //based on weather, temperature, and sugar content
-            throw new System.NotImplementedException();
+            //Maximum demand is 10, minimum 1
+            //+3 for weather, temp, and sugar each
+            Demand = 0;
+            int sugarBaseline = 4;
+            Demand += day.weather.RandomWeather; //RandomWeather is between 1 and 4
+            Demand += ((day.weather.Temperature - 70) / 10);
+            Demand += player1.SugarPerPitcher - sugarBaseline; 
+            return Demand;
         }
 
         public void RunGame()
