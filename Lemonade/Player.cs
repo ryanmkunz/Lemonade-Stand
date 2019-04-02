@@ -18,6 +18,8 @@ namespace Lemonade
         public int LemonsPerPitcher;
         public int SugarPerPitcher;
         public int IcePerPitcher;
+        public int CupsPerPitcher = 10;
+        public bool Pitchers;
 
         public void Resupply()
         {          
@@ -113,6 +115,15 @@ namespace Lemonade
                 }
 
             } while (RecipeItem != "none");            
+        }
+
+        public bool CheckForPitchers()
+        {
+            if (inventory.Cups < CupsPerPitcher || inventory.Lemons < LemonsPerPitcher || inventory.Sugar < SugarPerPitcher || inventory.Ice < IcePerPitcher)
+            {
+                Pitchers = false;
+            }
+            return Pitchers; 
         }
     }
 }
