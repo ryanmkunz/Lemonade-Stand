@@ -20,7 +20,8 @@ namespace Lemonade
         public int SugarPerPitcher;
         public int IcePerPitcher;
         public int CupsPerPitcher = 10;
-        public bool Pitchers;
+        public int Pitchers;
+        public int TotalCupsMade;
 
         
 
@@ -119,14 +120,16 @@ namespace Lemonade
             } while (RecipeItem != "none");            
         }
 
-        public bool CheckForPitchers()
-        //might not need this method
+        public int GetTotalCupsMade()
         {
-            if (inventory.Cups < CupsPerPitcher || inventory.Lemons < LemonsPerPitcher || inventory.Sugar < SugarPerPitcher || inventory.Ice < IcePerPitcher)
-            {
-                Pitchers = false;
-            }
-            return Pitchers; 
+            int[] LimitingFactor = new int[4];
+            LimitingFactor[0] = inventory.Cups / CupsPerPitcher;
+            LimitingFactor[1] = inventory.Lemons / LemonsPerPitcher;
+            LimitingFactor[2] = inventory.Sugar / SugarPerPitcher;
+            LimitingFactor[3] = inventory.Ice / IcePerPitcher;
+            Pitchers = LimitingFactor.Min();
+            TotalCupsMade = Pitchers * CupsPerPitcher;
+            return TotalCupsMade;
         }
 
     }
