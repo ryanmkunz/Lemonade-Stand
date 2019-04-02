@@ -19,8 +19,8 @@
     <AssociationLine Name="player1" Type="Lemonade.Player" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="6.875" Y="4.594" />
-        <Point X="6.875" Y="5.431" />
-        <Point X="5.75" Y="5.431" />
+        <Point X="6.875" Y="5.518" />
+        <Point X="5.75" Y="5.518" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -41,7 +41,7 @@
   <Class Name="Lemonade.Player">
     <Position X="4.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAwAABAAAAAABAAAAAAQBQAIAAAADAACACABAAAA=</HashCode>
+      <HashCode>AAQAAwCABAAAAAABAAIAAAQBQAIAAAADAACACABAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

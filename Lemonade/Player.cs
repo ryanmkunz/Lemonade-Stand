@@ -13,13 +13,15 @@ namespace Lemonade
         private string RecipeItem;
         public string Name;
         public Inventory inventory = new Inventory();
-        public Store store = new Store();
+        public Store Store = new Store();        
         public double PricePerCup;
         public int LemonsPerPitcher;
         public int SugarPerPitcher;
         public int IcePerPitcher;
         public int CupsPerPitcher = 10;
         public bool Pitchers;
+
+        
 
         public void Resupply()
         {          
