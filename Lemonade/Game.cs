@@ -17,7 +17,6 @@ namespace Lemonade
         {
             day.weather.GetTodaysForcast();
             day.weather.GetTemperature();
-            //day.weather.GetFutureForcast();
         }
 
         public void GetGameDurration()
@@ -25,30 +24,30 @@ namespace Lemonade
             UserInterface.DisplayDurrationMenu();
             Durration = int.Parse(Console.ReadLine());            
         }
-
+        
         public int GetDemand()
-        {
-            //based on weather, temperature, and sugar content
-            //Maximum demand is 10, minimum 1
-            //+3 for weather, temp, and sugar each
-
-            //TODO: price should have an impact on demand... 
-
+        {           
             Demand = 0;
             int sugarBaseline = 4;
-            Demand += day.weather.RandomWeather; //RandomWeather is between 1 and 4
+            Demand += day.weather.RandomWeather;
             Demand += ((day.weather.Temperature - 70) / 10);
-            Demand += player1.SugarPerPitcher - sugarBaseline; 
+            Demand += player1.SugarPerPitcher - sugarBaseline;
+            if (player1.PricePerCup > 0.25)
+            {
+                //TODO: make this more complicated (realistic)
+                Demand = -1;               
+            }
             return Demand;
         }
 
         public void RunGame()
         {
-            GetGameDurration();
+
+            GetGameDurration(); //Duration only has one R
             player1.Resupply();
             player1.SetRecipe();
             GetWeather();
-            day.GetDailySales(GetDemand());
+            day.GetDailySales(GetDemand());            
 
             if (player1.TotalCupsMade < day.CupsSold)
             {
