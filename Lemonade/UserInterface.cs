@@ -9,7 +9,7 @@ namespace Lemonade
     {
         public static void DisplayStore(Inventory inventory)
         {
-            Console.WriteLine("You have:");
+            Console.WriteLine('\n'+"You have:");
             Console.WriteLine(inventory.Cups + " Paper cups");
             Console.WriteLine(inventory.Lemons +" Lemons");
             Console.WriteLine(inventory.Sugar + " Cups of Sugar");
@@ -19,7 +19,7 @@ namespace Lemonade
 
         public static void DisplayPriceAndQuality(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
         {
-            Console.WriteLine("Price/Quality control");
+            Console.WriteLine('\n'+"Price/Quality control");
             Console.WriteLine("Price per cup: $" + lemonadePrice);
             Console.WriteLine("Lemons per pitcher: " + lemonsPerPitcher);
             Console.WriteLine("Sugar per pitcher: " + sugarPerPitcher);
@@ -55,12 +55,12 @@ namespace Lemonade
 
         public static void DisplayQuantitiyCheck(string itemName)
         {
-            Console.WriteLine("Enter the quantity of "+itemName+" you would like");
+            Console.WriteLine('\n'+"Enter the quantity of "+itemName+" you would like");
         }
 
         public static void DisplayReceipt(string itemName, int quantity, double totalCost)
         {
-            Console.WriteLine("Purchased "+quantity+" "+itemName+"for $"+totalCost);
+            Console.WriteLine('\n'+"Purchased "+quantity+" "+itemName+" for $"+totalCost);
         }
 
         public static void DisplayPriceChange()
