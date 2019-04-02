@@ -117,7 +117,8 @@ namespace Lemonade
                         break;
                 }
 
-            } while (RecipeItem != "none");            
+            } while (RecipeItem != "none");
+            GetTotalCupsMade();
         }
 
         public int GetTotalCupsMade()

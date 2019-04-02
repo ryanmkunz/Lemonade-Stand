@@ -47,24 +47,24 @@ namespace Lemonade
             GetGameDurration();
             player1.Resupply();
             player1.SetRecipe();
-            StartSellingLemonade();
-        }
-        public void StartSellingLemonade()
-        {
             GetWeather();
-            GetDemand();
-            day.GetDailySales(Demand);            
+            day.GetDailySales(GetDemand());
+
+            if (player1.TotalCupsMade < day.CupsSold)
+            {
+                day.CupsSold = player1.TotalCupsMade;                
+            }
+            UpdateInventory();
             UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, player1.TotalOrderCost, player1.PricePerCup);
             Console.ReadLine();
         }
 
         public void UpdateInventory()
         {
-            //TODO: use pitchers
             player1.inventory.Cups -= day.CupsSold;
-            player1.inventory.Lemons -= day.CupsSold * player1.LemonsPerPitcher;
-            player1.inventory.Sugar -= day.CupsSold * player1.SugarPerPitcher;
-            player1.inventory.Ice -= day.CupsSold * player1.IcePerPitcher;
+            player1.inventory.Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
+            player1.inventory.Sugar -= player1.Pitchers * player1.SugarPerPitcher;
+            player1.inventory.Ice -= player1.Pitchers * player1.IcePerPitcher;
         }
     }
 }

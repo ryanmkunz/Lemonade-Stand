@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Lemonade.Weather">
-    <Position X="6.25" Y="2.75" Width="1.75" />
+    <Position X="6.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAAEAAAAAAAAAAAAAAAAAAAAAAAAABCQAAAAEAAA=</HashCode>
       <FileName>Weather.cs</FileName>
@@ -19,12 +19,12 @@
     <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="1.375" Y="3.209" />
-        <Point X="1.375" Y="5.563" />
-        <Point X="2.75" Y="5.563" />
+        <Point X="1.375" Y="5.656" />
+        <Point X="2.75" Y="5.656" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAgAAAAAEAAEAAABAAAAAAAAAAQAAEAAAQAAAAEAAQ=</HashCode>
+      <HashCode>gAAgAAAAAEAAEAAABAAAAAAAAAAAAAEAAAQCAAAEAAQ=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -42,7 +42,7 @@
   <Class Name="Lemonade.Player">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQCABAAAAAABAAIAAAQBQAIAAAADAACACABAEAA=</HashCode>
+      <HashCode>AAQAAQAABAAQAAABAAIAAAUBQAIAAAADAACACABAEAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -62,18 +62,16 @@
     <AssociationLine Name="weather" Type="Lemonade.Weather" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5" Y="2.183" />
-        <Point X="5.959" Y="2.183" />
-        <Point X="5.959" Y="3.162" />
-        <Point X="6.25" Y="3.162" />
-        <Point X="6.25" Y="3.125" />
+        <Point X="5.375" Y="2.183" />
+        <Point X="5.375" Y="2.875" />
+        <Point X="6.25" Y="2.875" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAABCBAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABCAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="customer" />
       <Field Name="weather" />
     </ShowAsAssociation>
   </Class>

@@ -42,7 +42,7 @@ namespace Lemonade
 
         public void GetTemperature()
         {
-            Temperature = random.Next(70, 100);
+            Temperature = random.Next(70, 101);
         }
     }
 }
