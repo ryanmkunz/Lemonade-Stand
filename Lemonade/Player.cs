@@ -7,12 +7,11 @@ namespace Lemonade
 {
     public class Player
     {
-        private string SupplyOrder;
+        public string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
         public double TotalOrderCost;
         private string RecipeItem;
-        public string Name;
         public Inventory inventory = new Inventory();
         public Store store = new Store();        
         public double PricePerCup;
@@ -22,9 +21,7 @@ namespace Lemonade
         public int CupsPerPitcher = 10;
         public int Pitchers;
         public int TotalCupsMade;
-
         
-
         public void Resupply()
         {
             TotalOrderCost = 0;
@@ -74,7 +71,7 @@ namespace Lemonade
                 {
                     break;
                 }
-                
+                Console.Clear();
             }                                     
         }
 
@@ -132,6 +129,5 @@ namespace Lemonade
             TotalCupsMade = Pitchers * CupsPerPitcher;
             return TotalCupsMade;
         }
-
     }
 }

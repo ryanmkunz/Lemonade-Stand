@@ -8,7 +8,8 @@ namespace Lemonade
     public class Day
     {
         public int CupsSold = 0;
-        public int TotalCustomers = 300;       
+        public int TotalCustomers = 300;
+        public double Revenue;
 
         public Weather weather = new Weather();
 

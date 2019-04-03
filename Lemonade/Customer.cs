@@ -17,7 +17,7 @@ namespace Lemonade
             }
             else
             {
-                return false;
+                return true;
             }
         }
     }

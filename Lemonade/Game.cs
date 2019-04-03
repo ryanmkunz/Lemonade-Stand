@@ -8,10 +8,11 @@ namespace Lemonade
     public class Game
     {
         public Player player1 = new Player();       
-        public int Durration;        
+        public int Duration;        
         public int Temperature;
         public int Demand;
         public Day day = new Day();
+        public List<Day> days = new List<Day>();
 
         public void GetWeather()
         {
@@ -19,10 +20,11 @@ namespace Lemonade
             day.weather.GetTemperature();
         }
 
-        public void GetGameDurration()
+        public void GetGameDuration()
         {
-            UserInterface.DisplayDurrationMenu();
-            Durration = int.Parse(Console.ReadLine());            
+            UserInterface.DisplayDurationMenu();
+            Duration = int.Parse(Console.ReadLine());
+            Console.Clear();
         }
         
         public int GetDemand()
@@ -42,20 +44,21 @@ namespace Lemonade
 
         public void RunGame()
         {
-
-            GetGameDurration(); //Duration only has one R
-            player1.Resupply();
-            player1.SetRecipe();
-            GetWeather();
-            day.GetDailySales(GetDemand());            
-
-            if (player1.TotalCupsMade < day.CupsSold)
-            {
-                day.CupsSold = player1.TotalCupsMade;                
+            GetGameDuration();
+            for (int i = 0; i < Duration; i++)
+            {                 
+                player1.Resupply();
+                Console.Clear();
+                player1.SetRecipe();
+                //Console.Clear();
+                GetWeather();
+                day.GetDailySales(GetDemand());
+                GetAdjustedSales();
+                UpdateInventory();
+                UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, player1.TotalOrderCost, player1.PricePerCup);
+                IncrementDay();
             }
-            UpdateInventory();
-            UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, player1.TotalOrderCost, player1.PricePerCup);
-            Console.ReadLine();
+            GameOver();
         }
 
         public void UpdateInventory()
@@ -64,6 +67,27 @@ namespace Lemonade
             player1.inventory.Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
             player1.inventory.Sugar -= player1.Pitchers * player1.SugarPerPitcher;
             player1.inventory.Ice -= player1.Pitchers * player1.IcePerPitcher;
+        }
+
+        public void IncrementDay()
+        {
+            days.Add(day);
+            player1.SupplyOrder = "";
+        }
+
+        public void GetAdjustedSales()
+        {
+            if (player1.TotalCupsMade < day.CupsSold)
+            {
+                day.CupsSold = player1.TotalCupsMade;
+                day.Revenue = day.CupsSold * player1.PricePerCup;
+                player1.inventory.Money += day.Revenue;
+            }
+        }
+
+        public void GameOver()
+        {
+            UserInterface.DisplayGameEndReport(days);
         }
     }
 }

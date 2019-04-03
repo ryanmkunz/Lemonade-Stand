@@ -18,13 +18,13 @@
     <Position X="0.5" Y="0.5" Width="1.75" />
     <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="1.375" Y="3.209" />
-        <Point X="1.375" Y="5.656" />
-        <Point X="2.75" Y="5.656" />
+        <Point X="1.375" Y="3.978" />
+        <Point X="1.375" Y="5.563" />
+        <Point X="2.75" Y="5.563" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAgAAAAAEAAEAAABAAAAAAAAAAAAAEAAAQCAAAEAAQ=</HashCode>
+      <HashCode>gAAggAAAAFACEAAAAAAAAAAAAAAAAAQAAAQCAFAEAAQ=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -42,7 +42,7 @@
   <Class Name="Lemonade.Player">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQAABAAQAAABAAIAAAUBQAIAAAADAACACABAEAA=</HashCode>
+      <HashCode>AAQAAQAABAAQAAABAAIAAAEBQAIAAAADAACACABAEAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -61,14 +61,14 @@
     <Position X="3.5" Y="0.5" Width="1.5" />
     <AssociationLine Name="weather" Type="Lemonade.Weather" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="2.183" />
-        <Point X="5.375" Y="2.183" />
+        <Point X="5" Y="2.368" />
+        <Point X="5.375" Y="2.368" />
         <Point X="5.375" Y="2.875" />
         <Point X="6.25" Y="2.875" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAABCAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABCAAAAAAAAAAAAAAAAAABAQAAAACAAAAAAAAAA=</HashCode>
       <FileName>Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -78,7 +78,7 @@
   <Class Name="Lemonade.UserInterface">
     <Position X="9.5" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAgAAAAAAAEAgAAQwgAAQAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAQAAAAgAAAAAAAEAAAAA0gAAAAAAAAAAAA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>

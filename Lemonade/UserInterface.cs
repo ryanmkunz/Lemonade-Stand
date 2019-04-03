@@ -9,7 +9,7 @@ namespace Lemonade
     {
         public static void DisplayStore(Inventory inventory)
         {
-            Console.WriteLine('\n'+"You have:");
+            Console.WriteLine("You have:");
             Console.WriteLine(inventory.Cups + " Paper cups");
             Console.WriteLine(inventory.Lemons +" Lemons");
             Console.WriteLine(inventory.Sugar + " Cups of Sugar");
@@ -20,7 +20,7 @@ namespace Lemonade
 
         public static void DisplayPriceAndQuality(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
         {
-            Console.WriteLine('\n'+"Price/Quality control");
+            Console.WriteLine("Price/Quality control");
             Console.WriteLine("Price per cup: $" + lemonadePrice);
             Console.WriteLine("Lemons per pitcher: " + lemonsPerPitcher);
             Console.WriteLine("Sugar per pitcher: " + sugarPerPitcher);
@@ -30,22 +30,12 @@ namespace Lemonade
 
         public static void DisplayDayEndReport(string weather, int temperature, int sales, double costs, double pricePerCup)
         {
-            Console.WriteLine('\n' + "It was " + temperature + " degrees and " + weather + " today");
+            Console.WriteLine("It was " + temperature + " degrees and " + weather + " today");
             Console.WriteLine("Sold " + sales + " cups of lemonade");
             Console.WriteLine("You made $" + ((sales * pricePerCup) - costs)+'\n');
         }
 
-        public static void DisplayWeekEndReport()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static void DisplayWeatherForcast()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static void DisplayDurrationMenu()
+        public static void DisplayDurationMenu()
         {
             Console.WriteLine("How long would you like to play?");
             Console.WriteLine("7 Days , 14 Days, 30 Days");
@@ -64,6 +54,11 @@ namespace Lemonade
         public static void DisplayPriceChange()
         {
             Console.WriteLine("Enter new price per cup");
+        }
+
+        public static void DisplayGameEndReport(List<Day> days)
+        {
+            Console.WriteLine("Game Over");
         }
     }
 }
