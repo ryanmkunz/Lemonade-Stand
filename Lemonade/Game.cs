@@ -12,7 +12,7 @@ namespace Lemonade
         public int Temperature;
         public int Demand;
         public Day day = new Day();
-        public List<Day> days = new List<Day>();
+        public List<double> daysRevenue = new List<double>();
 
         public void GetWeather()
         {
@@ -45,6 +45,7 @@ namespace Lemonade
         public void RunGame()
         {
             GetGameDuration();
+            player1.inventory.Money = 25;
             for (int i = 0; i < Duration; i++)
             {                 
                 player1.Resupply();
@@ -55,7 +56,7 @@ namespace Lemonade
                 day.GetDailySales(GetDemand());
                 GetAdjustedSales();
                 UpdateInventory();
-                UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, player1.TotalOrderCost, player1.PricePerCup);
+                UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Revenue, player1.PricePerCup);
                 IncrementDay();
             }
             GameOver();
@@ -71,7 +72,7 @@ namespace Lemonade
 
         public void IncrementDay()
         {
-            days.Add(day);
+            daysRevenue.Add(day.Revenue);
             player1.SupplyOrder = "";
         }
 
@@ -87,7 +88,8 @@ namespace Lemonade
 
         public void GameOver()
         {
-            UserInterface.DisplayGameEndReport(days);
+            UserInterface.DisplayGameEndReport(daysRevenue);
+            Console.ReadLine();
         }
     }
 }

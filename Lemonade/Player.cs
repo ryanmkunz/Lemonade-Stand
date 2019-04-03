@@ -7,9 +7,9 @@ namespace Lemonade
 {
     public class Player
     {
-        public string SupplyOrder;
-        private int OrderQuantity;
-        private double OrderCost;
+        public string SupplyOrder; //what player is buying
+        private int OrderQuantity; //how much player is buying
+        private double OrderCost;  //cost of one material
         public double TotalOrderCost;
         private string RecipeItem;
         public Inventory inventory = new Inventory();
@@ -20,7 +20,7 @@ namespace Lemonade
         public int IcePerPitcher;
         public int CupsPerPitcher = 10;
         public int Pitchers;
-        public int TotalCupsMade;
+        public int TotalCupsMade;        
         
         public void Resupply()
         {
@@ -115,6 +115,7 @@ namespace Lemonade
                 }
 
             } while (RecipeItem != "none");
+            Console.Clear();
             GetTotalCupsMade();
         }
 

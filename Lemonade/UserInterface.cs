@@ -28,11 +28,11 @@ namespace Lemonade
             Console.WriteLine("Enter the name of the item you would like to change, or enter none to continue");
         }
 
-        public static void DisplayDayEndReport(string weather, int temperature, int sales, double costs, double pricePerCup)
+        public static void DisplayDayEndReport(string weather, int temperature, int sales, double revenue, double pricePerCup)
         {
             Console.WriteLine("It was " + temperature + " degrees and " + weather + " today");
             Console.WriteLine("Sold " + sales + " cups of lemonade");
-            Console.WriteLine("You made $" + ((sales * pricePerCup) - costs)+'\n');
+            Console.WriteLine("You made $" + revenue +'\n');
         }
 
         public static void DisplayDurationMenu()
@@ -56,9 +56,19 @@ namespace Lemonade
             Console.WriteLine("Enter new price per cup");
         }
 
-        public static void DisplayGameEndReport(List<Day> days)
+        public static void DisplayGameEndReport(List<double> days)
         {
-            Console.WriteLine("Game Over");
+            Console.WriteLine("Game Over" + '\n');
+            double GrossRevenue = 0;
+            double GrossProfit = 0;
+            for (int i = 0; i < days.Count; i++)
+            {
+                Console.Write("Day " + (i+1) + " Revenue: $");
+                Console.WriteLine(days[i]);
+                GrossRevenue += days[i];                
+            }
+            GrossProfit = GrossRevenue - 25;
+            Console.WriteLine("Profit: $" + GrossProfit);
         }
     }
 }
