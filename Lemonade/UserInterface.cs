@@ -20,6 +20,7 @@ namespace Lemonade
 
         public static void DisplayPriceAndQuality(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
         {
+            Console.Clear();
             Console.WriteLine("Price/Quality control");
             Console.WriteLine("Price per cup: $" + lemonadePrice);
             Console.WriteLine("Lemons per pitcher: " + lemonsPerPitcher);

@@ -17,8 +17,7 @@ namespace Lemonade
         public Game()
         {
             player1 = new Player();
-            store = new Store();
-            
+            store = new Store();           
             Days = new List<Day>();
         }
 
