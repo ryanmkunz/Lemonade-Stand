@@ -18,12 +18,12 @@ namespace Lemonade
         public Day()
         {
             CupsSold = 0;
-            TotalCustomers = 1000;
+            TotalCustomers = 300;
             weather = new Weather();
             random = new Random();
         }
 
-        public void GetDailySales(int demand)
+        public void GetDailySales(int demand, Player player)
         {
             for (int i = 0; i < TotalCustomers; i++)
             {
@@ -34,7 +34,7 @@ namespace Lemonade
                         customer = new Child();
                         break;
                     case 2:
-                        customer = new Adult();
+                        customer = new Customer();
                         break;
                     case 3:
                         customer = new OldPerson();
@@ -42,7 +42,7 @@ namespace Lemonade
                     default:
                         break;
                 }
-                if (customer.IsBuying(demand))
+                if (customer.IsBuying(demand, player))
                 {
                     CupsSold++;
                 }                

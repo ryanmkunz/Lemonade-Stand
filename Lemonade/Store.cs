@@ -65,6 +65,12 @@ namespace Lemonade
                             UserInterface.DisplayReceipt("Ice cubes", OrderQuantity, OrderCost);
                             TotalOrderCost += OrderCost;
                             break;
+                        case "default":
+                            inventory.Cups = 60;
+                            inventory.Lemons = 24;
+                            inventory.Sugar = 24;
+                            inventory.Ice = 24;
+                            break;
                         default:
                             break;
                     }

@@ -73,5 +73,32 @@ namespace Lemonade
         {
             Console.WriteLine("Would you like to play again?");
         }
+
+        public static bool InputValidation(string str, string type)
+        {
+            switch (type)
+            {
+                case "supplies":
+                    if (str == "cups" || str == "lemons" || str == "sugar" || str == "ice")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "yesNo":
+                    if (str == "yes" || str == "no")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                default:
+                    return false;
+            }
+        }
     }
 }

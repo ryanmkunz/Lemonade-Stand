@@ -12,7 +12,7 @@ namespace Lemonade
 
         }
 
-        public virtual bool IsBuying(int demand, Player player)
+        public override bool IsBuying(int demand, Player player)
         {
             //OldPerson likes recipes with less sugar 
             if (player.SugarPerPitcher < 4)

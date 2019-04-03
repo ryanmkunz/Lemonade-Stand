@@ -62,7 +62,7 @@ namespace Lemonade
                 Console.Clear();
                 player1.SetRecipe();
                 GetWeather();
-                day.GetDailySales(GetDemand());
+                day.GetDailySales(GetDemand(), player1);
                 GetAdjustedSales();
                 player1.inventory.UpdateInventory(player1, day);
                 UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Revenue, player1.PricePerCup);
