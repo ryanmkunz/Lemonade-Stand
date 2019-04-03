@@ -7,8 +7,12 @@ namespace Lemonade
 {
     public static class UserInterface
     {
+        public static int BadInput;
+        public static string StringInput;
+
         public static void DisplayStore(Inventory inventory)
         {
+            Console.Clear();
             Console.WriteLine("You have:");
             Console.WriteLine(inventory.Cups + " Paper cups");
             Console.WriteLine(inventory.Lemons +" Lemons");
@@ -18,7 +22,7 @@ namespace Lemonade
             Console.WriteLine("Enter the name of the item you wish to purchase, or enter none to continue");
         }
 
-        public static void DisplayPriceAndQuality(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
+        public static void DisplayPriceAndQuantity(double lemonadePrice, int lemonsPerPitcher, int sugarPerPitcher, int icePerPitcher)
         {
             Console.Clear();
             Console.WriteLine("Price/Quality control");
@@ -31,6 +35,7 @@ namespace Lemonade
 
         public static void DisplayDayEndReport(string weather, int temperature, int sales, double revenue, double pricePerCup)
         {
+            Console.Clear();
             Console.WriteLine("It was " + temperature + " degrees and " + weather + " today");
             Console.WriteLine("Sold " + sales + " cups of lemonade");
             Console.WriteLine("You made $" + revenue +'\n');
@@ -79,12 +84,13 @@ namespace Lemonade
             switch (type)
             {
                 case "supplies":
-                    if (str == "cups" || str == "lemons" || str == "sugar" || str == "ice")
+                    if (str == "cups" || str == "lemons" || str == "sugar" || str == "ice" || str == "none")
                     {
                         return true;
                     }
                     else
                     {
+                        Console.WriteLine("Please enter cups, lemons, sugar, ice, or none");
                         return false;
                     }
                 case "yesNo":
@@ -94,11 +100,17 @@ namespace Lemonade
                     }
                     else
                     {
+                        Console.WriteLine("Please enter yes or no");
                         return false;
                     }
                 default:
                     return false;
             }
+        }
+
+        public static void DisplayReadyForNextDay()
+        {
+            Console.WriteLine("Ready for the next day?");
         }
     }
 }

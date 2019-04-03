@@ -29,12 +29,21 @@ namespace Lemonade
             TotalOrderCost = 0;
             while (SupplyOrder != "none")
             {
-                UserInterface.DisplayStore(inventory);
-                SupplyOrder = Console.ReadLine();
+                do
+                {
+                    UserInterface.DisplayStore(inventory);
+                    UserInterface.StringInput = Console.ReadLine();
+                } while (!UserInterface.InputValidation(UserInterface.StringInput, "supplies"));
+
+                SupplyOrder = UserInterface.StringInput;
                 if (SupplyOrder != "none")
                 {
-                    UserInterface.DisplayQuantitiyCheck(SupplyOrder);
-                    OrderQuantity = int.Parse(Console.ReadLine());
+                    do
+                    {
+                        UserInterface.DisplayQuantitiyCheck(SupplyOrder);
+                        UserInterface.StringInput = Console.ReadLine();
+                    } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput)); // && player can afford purchase);                    
+                    OrderQuantity = int.Parse(UserInterface.StringInput);
                     switch (SupplyOrder)
                     {
                         case "cups":
@@ -84,3 +93,4 @@ namespace Lemonade
         }
     }
 }
+

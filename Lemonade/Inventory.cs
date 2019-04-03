@@ -11,7 +11,23 @@ namespace Lemonade
         public int Lemons;
         public int Sugar;
         public int Ice;
-        public double Money;
+        private double money;
+
+        public double Money
+        {
+            get
+            {
+                return money;
+            }
+            set
+            {
+                money = value;
+                if (money < 0)
+                {
+                    money = 0;
+                }
+            }
+        }
 
         public void UpdateInventory(Player player1, Day day)
         {           

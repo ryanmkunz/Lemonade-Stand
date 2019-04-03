@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Lemonade.Weather">
-    <Position X="9.75" Y="2.75" Width="1.75" />
+    <Position X="8.5" Y="2.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAAEAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAEAAA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Customer">
-    <Position X="9.75" Y="0.5" Width="1.75" />
+    <Position X="8.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
@@ -16,15 +16,14 @@
   </Class>
   <Class Name="Lemonade.Game">
     <Position X="0.5" Y="0.5" Width="1.75" />
-    <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedToPoint="true">
       <Path>
         <Point X="1.375" Y="3.786" />
-        <Point X="1.375" Y="4.939" />
-        <Point X="2.5" Y="4.939" />
+        <Point X="1.375" Y="4.25" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAggAAAAFACEAAAAAAAAAAAAAAAAAQBQAQAABAAAAQ=</HashCode>
+      <HashCode>gAAggAAAAEACEAAAAAAAAAAAAAAAAAQBQAQAABAAEAQ=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -34,14 +33,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.Inventory">
-    <Position X="6.75" Y="4.25" Width="1.75" />
+    <Position X="3.25" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAQCAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAAUAA=</HashCode>
       <FileName>Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Player">
-    <Position X="2.5" Y="3.25" Width="1.75" />
+    <Position X="0.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAQAABAAQAAABAAIAAAEAQAIAAAACAACACAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -51,21 +50,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.Store">
-    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Position X="3.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAABABAAAAARAAAAAAAAAACACABAEAA=</HashCode>
       <FileName>Store.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Day">
-    <Position X="6.75" Y="0.5" Width="1.75" />
+    <Position X="5.5" Y="0.5" Width="1.75" />
     <AssociationLine Name="weather" Type="Lemonade.Weather" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.625" Y="3.017" />
-        <Point X="7.625" Y="3.267" />
-        <Point X="8.75" Y="3.267" />
-        <Point X="8.75" Y="3.125" />
-        <Point X="9.75" Y="3.125" />
+        <Point X="6.375" Y="3.017" />
+        <Point X="6.375" Y="3.25" />
+        <Point X="8.17" Y="3.25" />
+        <Point X="8.17" Y="3.25" />
+        <Point X="8.5" Y="3.25" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -78,9 +77,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.UserInterface">
-    <Position X="12.25" Y="4.25" Width="2" />
+    <Position X="5.75" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAQQAAAgAAAAAAAEAAAAA0gAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABACAEAAAAQQAAAgAAAAAAAEAAAAAUgAAAAAEAAAABA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -88,10 +87,10 @@
     <Position X="12.75" Y="0.5" Width="1.5" />
     <InheritanceLine Type="Lemonade.Customer" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.5" Y="0.75" />
+        <Point X="10.25" Y="0.75" />
         <Point X="12.338" Y="0.75" />
-        <Point X="12.338" Y="0.857" />
-        <Point X="12.75" Y="0.857" />
+        <Point X="12.338" Y="0.75" />
+        <Point X="12.75" Y="0.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -100,13 +99,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.OldPerson">
-    <Position X="12.75" Y="3" Width="1.5" />
-    <InheritanceLine Type="Lemonade.Customer" FixedFromPoint="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Lemonade.Customer" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="11.5" Y="1.875" />
-        <Point X="11.875" Y="1.875" />
-        <Point X="11.875" Y="3.594" />
-        <Point X="12.75" Y="3.594" />
+        <Point X="10.25" Y="1.875" />
+        <Point X="11.667" Y="1.875" />
+        <Point X="11.667" Y="5.213" />
+        <Point X="12.75" Y="5.213" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -115,13 +114,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Adult">
-    <Position X="12.75" Y="1.75" Width="1.5" />
+    <Position X="12.75" Y="2.5" Width="1.5" />
     <InheritanceLine Type="Lemonade.Customer" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="11.5" Y="1.312" />
-        <Point X="12.417" Y="1.312" />
-        <Point X="12.417" Y="2.463" />
-        <Point X="12.75" Y="2.463" />
+        <Point X="10.25" Y="1.313" />
+        <Point X="12.417" Y="1.313" />
+        <Point X="12.417" Y="3.213" />
+        <Point X="12.75" Y="3.213" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>

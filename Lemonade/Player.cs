@@ -25,7 +25,10 @@ namespace Lemonade
                
         public void SetPrice()
         {
-            UserInterface.DisplayPriceChange();
+            do
+            {
+                UserInterface.DisplayPriceChange();
+            } while (false); //use UserInterface.InputValidation(str, type)            
             PricePerCup = double.Parse(Console.ReadLine());
         }
 
@@ -35,35 +38,49 @@ namespace Lemonade
             LemonsPerPitcher = 4;
             SugarPerPitcher = 4;
             IcePerPitcher = 4;
-
             do
             {
-                UserInterface.DisplayPriceAndQuality(PricePerCup, LemonsPerPitcher, SugarPerPitcher, IcePerPitcher);
-                RecipeItem = Console.ReadLine();
-                
+                do
+                {
+                    UserInterface.DisplayPriceAndQuantity(PricePerCup, LemonsPerPitcher, SugarPerPitcher, IcePerPitcher);
+                    UserInterface.StringInput = Console.ReadLine();
+                } while (!UserInterface.InputValidation(UserInterface.StringInput, "supplies"));
+                RecipeItem = UserInterface.StringInput;                
                 switch (RecipeItem)
                 {
                     case "price":
                         SetPrice();
                         break;
                     case "lemons":
-                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
-                        LemonsPerPitcher = int.Parse(Console.ReadLine());                        
+                        do
+                        {
+                            UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                            UserInterface.StringInput = Console.ReadLine();
+                        } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput));                        
+                        LemonsPerPitcher = int.Parse(UserInterface.StringInput);                        
                         break;
                     case "sugar":
-                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
-                        SugarPerPitcher = int.Parse(Console.ReadLine());
+                        do
+                        {
+                            UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                            UserInterface.StringInput = Console.ReadLine();
+                        } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput));
+                        SugarPerPitcher = int.Parse(UserInterface.StringInput);
                         break;
                     case "ice":
-                        UserInterface.DisplayQuantitiyCheck(RecipeItem);
-                        IcePerPitcher = int.Parse(Console.ReadLine());
+                        do
+                        {
+                            UserInterface.DisplayQuantitiyCheck(RecipeItem);
+                            UserInterface.StringInput = Console.ReadLine();
+                        } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput));                        
+                        IcePerPitcher = int.Parse(UserInterface.StringInput);
                         break;
                     default:
                         break;
                 }
 
             } while (RecipeItem != "none");
-            Console.Clear();
+            //Console.Clear();
             GetTotalCupsMade();
         }
 

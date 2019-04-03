@@ -7,6 +7,10 @@ namespace Lemonade
 {
     public class Game
     {
+        //--------------------------------------------
+        //Make sure player cant have negative money!!!
+        //--------------------------------------------
+
         public Player player1;
         public int Duration;        
         public int Demand;
@@ -29,9 +33,12 @@ namespace Lemonade
 
         public void GetGameDuration()
         {
-            UserInterface.DisplayDurationMenu();
-            Duration = int.Parse(Console.ReadLine());
-            Console.Clear();
+            do
+            {
+                UserInterface.DisplayDurationMenu();
+                UserInterface.StringInput = Console.ReadLine();
+            } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput));
+            Duration = int.Parse(UserInterface.StringInput);
         }
         
         public int GetDemand()
@@ -59,19 +66,23 @@ namespace Lemonade
                 day = new Day();
                 Days.Add(day);
                 store.Resupply(player1.inventory);
-                Console.Clear();
                 player1.SetRecipe();
                 GetWeather();
                 day.GetDailySales(GetDemand(), player1);
                 GetAdjustedSales();
                 player1.inventory.UpdateInventory(player1, day);
                 UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Revenue, player1.PricePerCup);
-                IncrementDay();
+                do
+                {
+                    UserInterface.DisplayReadyForNextDay();
+                    UserInterface.StringInput = Console.ReadLine();
+                } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));                                
+                ResetDay();
             }
             GameOver();
         }
 
-        public void IncrementDay()
+        public void ResetDay()
         {
             store.SupplyOrder = "";
         }
