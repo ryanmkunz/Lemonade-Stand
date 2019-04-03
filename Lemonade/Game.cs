@@ -7,15 +7,25 @@ namespace Lemonade
 {
     public class Game
     {
+        //TODO: variables shouldn't be defined here, do that in constructor
         public Player player1 = new Player();       
         public int Duration;        
         public int Temperature;
         public int Demand;
         public Day day = new Day();
+        public List<Day> Days = new List<Day>();
         public List<double> daysRevenue = new List<double>();
 
         public void GetWeather()
         {
+            //TODO: Instantiate a new day (same name) and place in a list
+            //------------------------------------------
+            //for (int i = 0; i < 7; i++)
+            //{
+            //     Day day1 = new Day();
+            //    Days.Add(day1);
+            //}
+            //------------------------------------------
             day.weather.GetTodaysForcast();
             day.weather.GetTemperature();
         }
@@ -64,6 +74,7 @@ namespace Lemonade
 
         public void UpdateInventory()
         {
+            //TODO: Move to inventory class
             player1.inventory.Cups -= day.CupsSold;
             player1.inventory.Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
             player1.inventory.Sugar -= player1.Pitchers * player1.SugarPerPitcher;
