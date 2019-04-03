@@ -14,11 +14,14 @@ namespace Lemonade
         public double Money;
 
         public void UpdateInventory(Player player1, Day day)
-        {            
+        {           
             Cups -= day.CupsSold;
-            Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
-            Sugar -= player1.Pitchers * player1.SugarPerPitcher;
-            Ice -= player1.Pitchers * player1.IcePerPitcher;
+            Ice = 0;
+            if (day.CupsSold > 0)
+            {
+                Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
+                Sugar -= player1.Pitchers * player1.SugarPerPitcher;
+            }
         }
     }
 }
