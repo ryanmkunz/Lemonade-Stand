@@ -7,74 +7,26 @@ namespace Lemonade
 {
     public class Player
     {
-        public string SupplyOrder; //what player is buying
-        private int OrderQuantity; //how much player is buying
-        private double OrderCost;  //cost of one material
+        public string SupplyOrder;
+        private int OrderQuantity;
+        private double OrderCost;
         public double TotalOrderCost;
         private string RecipeItem;
-        public Inventory inventory = new Inventory();
-        public Store store = new Store();        
+        public Inventory inventory;        
         public double PricePerCup;
         public int LemonsPerPitcher;
         public int SugarPerPitcher;
         public int IcePerPitcher;
-        public int CupsPerPitcher = 10;
+        public int CupsPerPitcher;
         public int Pitchers;
-        public int TotalCupsMade;        
-        
-        public void Resupply()
-        {
-            TotalOrderCost = 0;
-            while (SupplyOrder != "none")
-            {
-                UserInterface.DisplayStore(inventory);
-                SupplyOrder = Console.ReadLine();
-                if (SupplyOrder != "none")
-                {
-                    UserInterface.DisplayQuantitiyCheck(SupplyOrder);
-                    OrderQuantity = int.Parse(Console.ReadLine());
-                    switch (SupplyOrder)
-                    {
-                        case "cups":
-                            inventory.Cups += OrderQuantity;
-                            OrderCost = OrderQuantity * store.CupPrice;
-                            inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Cups", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
-                            break;
-                        case "lemons":
-                            inventory.Lemons += OrderQuantity;
-                            OrderCost = OrderQuantity * store.LemonPrice;
-                            inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Lemons", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
-                            break;
-                        case "sugar":
-                            inventory.Sugar += OrderQuantity;
-                            OrderCost = OrderQuantity * store.SugarPrice;
-                            inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Cups of Sugar", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
-                            break;
-                        case "ice":
-                            inventory.Ice += OrderQuantity;
-                            OrderCost = OrderQuantity * store.IcePrice;
-                            inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Ice cubes", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                else
-                {
-                    break;
-                }
-                Console.Clear();
-            }                                     
-        }
+        public int TotalCupsMade;
 
+        public Player()
+        {
+            inventory = new Inventory();
+            CupsPerPitcher = 10;
+        }
+               
         public void SetPrice()
         {
             UserInterface.DisplayPriceChange();
