@@ -11,6 +11,7 @@ namespace Lemonade
         public int TotalCustomers;
         public double Revenue;
         public Weather weather;
+        public Customer customer;
 
         public Day()
         {
@@ -18,11 +19,12 @@ namespace Lemonade
             TotalCustomers = 300;
             weather = new Weather();
         }
+
         public void GetDailySales(int demand)
         {
             for (int i = 0; i < TotalCustomers; i++)
             {
-                Customer customer = new Customer();
+                customer = new Customer();
                 if (customer.IsBuying(demand))
                 {
                     CupsSold++;

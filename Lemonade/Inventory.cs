@@ -13,11 +13,6 @@ namespace Lemonade
         public int Ice;
         public double Money;
 
-        public Inventory()
-        {
-
-        }
-
         public void UpdateInventory(Player player1, Day day)
         {            
             Cups -= day.CupsSold;

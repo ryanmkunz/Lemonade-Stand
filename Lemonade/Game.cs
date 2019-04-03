@@ -8,16 +8,16 @@ namespace Lemonade
     public class Game
     {
         public Player player1;
-        public Store store;
         public int Duration;        
         public int Demand;
         public Day day;
         public List<Day> Days;
+        public Store store;
 
         public Game()
         {
             player1 = new Player();
-            store = new Store();           
+            store = new Store();
             Days = new List<Day>();
         }
 
@@ -44,6 +44,7 @@ namespace Lemonade
             if (player1.PricePerCup > 0.25)
             {
                 //TODO: make this more complicated (realistic)
+                //See notes in Customer class
                 Demand = -1;               
             }
             return Demand;
