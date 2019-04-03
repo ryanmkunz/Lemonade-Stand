@@ -56,19 +56,20 @@ namespace Lemonade
             Console.WriteLine("Enter new price per cup");
         }
 
-        public static void DisplayGameEndReport(List<double> days)
+        public static void DisplayGameEndReport(List<Day>days, double money)
         {
             Console.WriteLine("Game Over" + '\n');
-            double GrossRevenue = 0;
-            double GrossProfit = 0;
             for (int i = 0; i < days.Count; i++)
             {
                 Console.Write("Day " + (i+1) + " Revenue: $");
-                Console.WriteLine(days[i]);
-                GrossRevenue += days[i];                
+                Console.WriteLine(days[i].Revenue);                
             }
-            GrossProfit = GrossRevenue - 25;
-            Console.WriteLine("Profit: $" + GrossProfit);
+            Console.WriteLine("Profit: $" + (money - 25));
+        }
+
+        public static void DisplayPlayAgainPrompt()
+        {
+            Console.WriteLine("Would you like to play again?");
         }
     }
 }

@@ -10,11 +10,11 @@ namespace Lemonade
         public int Temperature;
         public string WeatherForcast;
         public int RandomWeather;
-        Random random = new Random();
+        Random random;
 
-        public void GetFutureForcast()
+        public Weather()
         {
-            throw new System.NotImplementedException();
+            random = new Random();
         }
 
         public void GetTodaysForcast()

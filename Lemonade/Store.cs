@@ -7,10 +7,10 @@ namespace Lemonade
 {
     public class Store
     {
-        public double CupPrice = 0.08;
-        public double LemonPrice = 0.07;
-        public double SugarPrice = 0.06;
-        public double IcePrice = 0.09;
+        public double CupPrice;
+        public double LemonPrice;
+        public double SugarPrice;
+        public double IcePrice;
         public string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
@@ -18,12 +18,14 @@ namespace Lemonade
 
         public Store()
         {
-
+            CupPrice = 0.08;
+            LemonPrice = 0.07;
+            SugarPrice = 0.06;
+            IcePrice = 0.09;
         }
 
         public void Resupply(Inventory inventory)
         {
-            //TODO: Move this to the store class
             TotalOrderCost = 0;
             while (SupplyOrder != "none")
             {

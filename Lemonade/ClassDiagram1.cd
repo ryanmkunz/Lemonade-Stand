@@ -3,7 +3,7 @@
   <Class Name="Lemonade.Weather">
     <Position X="6.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAQEAAEAAAAAAAAAAAAAAAAAAAAAAAAABCQAAAAEAAA=</HashCode>
+      <HashCode>AAQEAAEAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAEAAA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,12 +19,12 @@
     <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="1.375" Y="3.978" />
-        <Point X="1.375" Y="5.563" />
-        <Point X="2.75" Y="5.563" />
+        <Point X="1.375" Y="5.189" />
+        <Point X="2.75" Y="5.189" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAggAAAAFACEAAAAAAAAAAAAAAAAAQAAAQCgBAEAAQ=</HashCode>
+      <HashCode>gAAggAAAAFACEAAAAAAAAAAAAAAAAAQBQAQAABAAAAQ=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -35,25 +35,24 @@
   <Class Name="Lemonade.Inventory">
     <Position X="5.5" Y="5.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQCAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAA=</HashCode>
+      <HashCode>AAAQCAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAAUAA=</HashCode>
       <FileName>Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lemonade.Player">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQAABAAQAAABAAIAAAEBQAIAAAADAACACABAEAA=</HashCode>
+      <HashCode>AAQAAQAABAAQAAABAAIAAAEAQAIAAAACAACACAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="inventory" />
-      <Field Name="store" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Lemonade.Store">
     <Position X="8.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAAABAAAAAQAAAAAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAAAABABAAAAARAAAAAAAAAACACABAEAA=</HashCode>
       <FileName>Store.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -61,8 +60,8 @@
     <Position X="3.5" Y="0.5" Width="1.5" />
     <AssociationLine Name="weather" Type="Lemonade.Weather" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="2.368" />
-        <Point X="5.375" Y="2.368" />
+        <Point X="5" Y="2.553" />
+        <Point X="5.375" Y="2.553" />
         <Point X="5.375" Y="2.875" />
         <Point X="6.25" Y="2.875" />
       </Path>

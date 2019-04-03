@@ -7,10 +7,6 @@ namespace Lemonade
 {
     public class Player
     {
-        public string SupplyOrder;
-        private int OrderQuantity;
-        private double OrderCost;
-        public double TotalOrderCost;
         private string RecipeItem;
         public Inventory inventory;        
         public double PricePerCup;

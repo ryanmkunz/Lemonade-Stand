@@ -7,25 +7,23 @@ namespace Lemonade
 {
     public class Game
     {
-        //TODO: variables shouldn't be defined here, do that in constructor
-        public Player player1 = new Player();       
+        public Player player1;
+        public Store store;
         public int Duration;        
-        public int Temperature;
         public int Demand;
-        public Day day = new Day();
-        public List<Day> Days = new List<Day>();
-        public List<double> daysRevenue = new List<double>();
+        public Day day;
+        public List<Day> Days;
+
+        public Game()
+        {
+            player1 = new Player();
+            store = new Store();
+            
+            Days = new List<Day>();
+        }
 
         public void GetWeather()
         {
-            //TODO: Instantiate a new day (same name) and place in a list
-            //------------------------------------------
-            //for (int i = 0; i < 7; i++)
-            //{
-            //     Day day1 = new Day();
-            //    Days.Add(day1);
-            //}
-            //------------------------------------------
             day.weather.GetTodaysForcast();
             day.weather.GetTemperature();
         }
@@ -57,34 +55,25 @@ namespace Lemonade
             GetGameDuration();
             player1.inventory.Money = 25;
             for (int i = 0; i < Duration; i++)
-            {                 
-                player1.Resupply();
+            {
+                day = new Day();
+                Days.Add(day);
+                store.Resupply(player1.inventory);
                 Console.Clear();
                 player1.SetRecipe();
-                //Console.Clear();
                 GetWeather();
                 day.GetDailySales(GetDemand());
                 GetAdjustedSales();
-                UpdateInventory();
+                player1.inventory.UpdateInventory(player1, day);
                 UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Revenue, player1.PricePerCup);
                 IncrementDay();
             }
             GameOver();
         }
 
-        public void UpdateInventory()
-        {
-            //TODO: Move to inventory class
-            player1.inventory.Cups -= day.CupsSold;
-            player1.inventory.Lemons -= player1.Pitchers * player1.LemonsPerPitcher;
-            player1.inventory.Sugar -= player1.Pitchers * player1.SugarPerPitcher;
-            player1.inventory.Ice -= player1.Pitchers * player1.IcePerPitcher;
-        }
-
         public void IncrementDay()
         {
-            daysRevenue.Add(day.Revenue);
-            player1.SupplyOrder = "";
+            store.SupplyOrder = "";
         }
 
         public void GetAdjustedSales()
@@ -99,8 +88,16 @@ namespace Lemonade
 
         public void GameOver()
         {
-            UserInterface.DisplayGameEndReport(daysRevenue);
-            Console.ReadLine();
+            UserInterface.DisplayGameEndReport(Days, player1.inventory.Money);
+            UserInterface.DisplayPlayAgainPrompt();
+            if ("yes" == Console.ReadLine())
+            {
+                RunGame();
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
