@@ -37,6 +37,7 @@ namespace Lemonade
 
         public static void DisplayDurationMenu()
         {
+            Console.Clear();
             Console.WriteLine("How long would you like to play?");
             Console.WriteLine("7 Days , 14 Days, 30 Days");
         }
@@ -64,7 +65,7 @@ namespace Lemonade
                 Console.Write("Day " + (i+1) + " Revenue: $");
                 Console.WriteLine(days[i].Revenue);                
             }
-            Console.WriteLine("Profit: $" + (money - 25));
+            Console.WriteLine('\n' + "Profit: $" + (money - 25) + '\n');
         }
 
         public static void DisplayPlayAgainPrompt()
