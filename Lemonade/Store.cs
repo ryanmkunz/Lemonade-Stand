@@ -14,6 +14,7 @@ namespace Lemonade
         public string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
+        public double TotalCost;
 
         public Store()
         {
@@ -21,10 +22,12 @@ namespace Lemonade
             LemonPrice = 0.07;
             SugarPrice = 0.06;
             IcePrice = 0.09;
+            TotalCost = 0;
         }
 
         public void Resupply(Inventory inventory)
         {
+            TotalCost = 0;
             while (SupplyOrder != "none")
             {
                 do
@@ -49,6 +52,7 @@ namespace Lemonade
                             CheckBalance(inventory, CupPrice);
                             inventory.Cups += OrderQuantity;
                             inventory.Money -= OrderCost;
+                            TotalCost += OrderCost;
                             UserInterface.DisplayReceipt("Cups", OrderQuantity, OrderCost);
                             break;
                         case "lemons":
@@ -56,6 +60,7 @@ namespace Lemonade
                             CheckBalance(inventory, LemonPrice);
                             inventory.Lemons += OrderQuantity;
                             inventory.Money -= OrderCost;
+                            TotalCost += OrderCost;
                             UserInterface.DisplayReceipt("Lemons", OrderQuantity, OrderCost);
                             break;
                         case "sugar":
@@ -63,6 +68,7 @@ namespace Lemonade
                             CheckBalance(inventory, SugarPrice);
                             inventory.Sugar += OrderQuantity;
                             inventory.Money -= OrderCost;
+                            TotalCost += OrderCost;
                             UserInterface.DisplayReceipt("Sugar", OrderQuantity, OrderCost);
                             break;
                         case "ice":
@@ -70,6 +76,7 @@ namespace Lemonade
                             CheckBalance(inventory, CupPrice);
                             inventory.Ice += OrderQuantity;
                             inventory.Money -= OrderCost;
+                            TotalCost += OrderCost;
                             UserInterface.DisplayReceipt("Ice", OrderQuantity, OrderCost);
                             break;
                         default:

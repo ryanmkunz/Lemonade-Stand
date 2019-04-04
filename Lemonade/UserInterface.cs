@@ -33,12 +33,12 @@ namespace Lemonade
             Console.WriteLine("Enter the name of the item you would like to change, or enter none to continue");
         }
 
-        public static void DisplayDayEndReport(string weather, int temperature, int sales, double revenue, double pricePerCup)
+        public static void DisplayDayEndReport(string weather, int temperature, int sales, double profit, double pricePerCup)
         {
             Console.Clear();
             Console.WriteLine("It was " + temperature + " degrees and " + weather + " today");
             Console.WriteLine("Sold " + sales + " cups of lemonade");
-            Console.WriteLine("You made $" + revenue +'\n');
+            Console.WriteLine("You made $" + profit +'\n');
         }
 
         public static void DisplayDurationMenu()
@@ -65,11 +65,12 @@ namespace Lemonade
 
         public static void DisplayGameEndReport(List<Day>days, double money)
         {
-            Console.WriteLine("Game Over" + '\n');
+            Console.WriteLine('\n' + "Game Over" + '\n');
             for (int i = 0; i < days.Count; i++)
             {
-                Console.Write("Day " + (i+1) + " Revenue: $");
-                Console.WriteLine(days[i].Revenue);                
+                Console.Write("Day " + (i+1) + " Profit: $");
+                Console.Write(days[i].Profit);
+                Console.WriteLine(", Weather was " + days[i].weather.WeatherForcast + ", and " + days[i].weather.Temperature + " degrees");
             }
             Console.WriteLine('\n' + "Profit: $" + (money - 25) + '\n');
         }
@@ -111,6 +112,11 @@ namespace Lemonade
         public static void DisplayReadyForNextDay()
         {
             Console.WriteLine("Ready for the next day?");
+        }
+
+        public static void DisplayWeekForcast(List<string> weeksForcast)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

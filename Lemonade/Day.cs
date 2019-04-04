@@ -10,6 +10,8 @@ namespace Lemonade
         public int CupsSold;
         public int TotalCustomers;
         public double Revenue;
+        public double Costs;
+        public double Profit;
         public Weather weather;
         public Customer customer;
         private Random random;
@@ -20,6 +22,7 @@ namespace Lemonade
             CupsSold = 0;
             TotalCustomers = 300;
             Revenue = 0;
+            Profit = 0;
             weather = new Weather();
             random = new Random();
         }

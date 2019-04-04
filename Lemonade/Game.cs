@@ -11,9 +11,9 @@ namespace Lemonade
         //TODO
         //Add weekly forcast
         //Add price sensitivity to child classes of Customer
-        //Add costs to end of day and end of week report
         //Have end of week report display every 7 days
         //Make price have more of an impact on demand
+        //Show profit only, not revenue
         //--------------------------------------------
 
         public Player player1;
@@ -76,7 +76,7 @@ namespace Lemonade
                 day.GetDailySales(GetDemand(), player1);
                 GetAdjustedSales();
                 player1.inventory.UpdateInventory(player1, day);
-                UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Revenue, player1.PricePerCup);
+                UserInterface.DisplayDayEndReport(day.weather.WeatherForcast, day.weather.Temperature, day.CupsSold, day.Profit, player1.PricePerCup);
                 do
                 {
                     UserInterface.DisplayReadyForNextDay();
@@ -93,11 +93,15 @@ namespace Lemonade
                 day.CupsSold = player1.TotalCupsMade;
                 day.Revenue = day.CupsSold * player1.PricePerCup;
                 player1.inventory.Money += day.Revenue;
+                day.Costs = store.TotalCost;
+                day.Profit = day.Revenue - day.Costs;
             }
             else
             {
                 day.Revenue = day.CupsSold * player1.PricePerCup;
                 player1.inventory.Money += day.Revenue;
+                day.Costs = store.TotalCost;
+                day.Profit = day.Revenue - day.Costs;
             }
         }
 
@@ -111,6 +115,7 @@ namespace Lemonade
                 player1.inventory.Lemons = 0;
                 player1.inventory.Sugar = 0;
                 player1.inventory.Ice = 0;
+                Days.Clear();
                 RunGame();
             }
             else
