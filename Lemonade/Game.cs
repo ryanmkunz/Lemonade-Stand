@@ -10,6 +10,8 @@ namespace Lemonade
         //--------------------------------------------
         //TODO
         //Add weekly forcast
+        //Generate a list of weather conditions for the week at the start of the game
+        //As daily weather conditions are set, limit them to be within a range of the forcasted weather
         //Add price sensitivity to child classes of Customer
         //Have end of week report display every 7 days
         //Make price have more of an impact on demand
@@ -70,6 +72,7 @@ namespace Lemonade
             {
                 day = new Day();
                 Days.Add(day);
+                GetWeatherWeek();
                 store.Resupply(player1.inventory); 
                 player1.SetRecipe();
                 GetWeather();
@@ -122,6 +125,12 @@ namespace Lemonade
             {
                 Environment.Exit(0);
             }
+        }
+
+        public void GetWeatherWeek()
+        {
+            day.weather.GetWeeksForcast();
+            UserInterface.DisplayWeekForcast(day.weather.weeksForcast);
         }
     }
 }

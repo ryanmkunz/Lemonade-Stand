@@ -11,10 +11,12 @@ namespace Lemonade
         public string WeatherForcast;
         public int RandomWeather;
         Random random;
+        public List<string> weeksForcast;
 
         public Weather()
         {
             random = new Random();
+            weeksForcast = new List<string>();
         }
 
         public void GetTodaysForcast()
@@ -40,9 +42,38 @@ namespace Lemonade
             }           
         }
 
+        private string GetRandomConditions()
+        {
+            RandomWeather = random.Next(1, 5);
+
+            switch (RandomWeather)
+            {
+                case 1:
+                    return "sunny";
+                case 2:
+                    return "partly cloudy";
+                case 3:
+                    return "cloudy";
+                case 4:
+                    return "rainy";
+                default:
+                    return "sunny";
+            }
+        }
+
         public void GetTemperature()
         {
             Temperature = random.Next(70, 101);
+        }
+
+        public void GetWeeksForcast()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                GetTemperature();                
+                weeksForcast.Add(Temperature.ToString() + " degrees, and " + GetRandomConditions());
+            }
+            
         }
     }
 }

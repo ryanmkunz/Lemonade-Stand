@@ -116,7 +116,10 @@ namespace Lemonade
 
         public static void DisplayWeekForcast(List<string> weeksForcast)
         {
-            throw new System.NotImplementedException();
+            foreach (object weather in weeksForcast)
+            {
+                Console.WriteLine(weather);
+            }
         }
     }
 }
