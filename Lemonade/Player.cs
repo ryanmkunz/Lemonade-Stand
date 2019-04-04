@@ -28,8 +28,9 @@ namespace Lemonade
             do
             {
                 UserInterface.DisplayPriceChange();
-            } while (false); //use UserInterface.InputValidation(str, type)            
-            PricePerCup = double.Parse(Console.ReadLine());
+                UserInterface.StringInput = Console.ReadLine();
+            } while (!double.TryParse(UserInterface.StringInput, out UserInterface.BadDoubleInput));             
+            PricePerCup = double.Parse(UserInterface.StringInput);
         }
 
         public void SetRecipe()

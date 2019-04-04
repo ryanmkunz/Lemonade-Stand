@@ -79,7 +79,7 @@
   <Class Name="Lemonade.UserInterface">
     <Position X="5.75" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABACAEAAAAQQAAAwAAAAAAAEAAAAAVgAAAAAEAAAABA=</HashCode>
+      <HashCode>ABACAEBAAAQQAAAwAAAAAAAEAAAAAVgAAAAAEAAAABA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>

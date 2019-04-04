@@ -8,6 +8,7 @@ namespace Lemonade
     public static class UserInterface
     {
         public static int BadInput;
+        public static double BadDoubleInput;
         public static string StringInput;
 
         public static void DisplayStore(Inventory inventory)
@@ -68,7 +69,7 @@ namespace Lemonade
             Console.WriteLine('\n' + "Game Over" + '\n');
             for (int i = 0; i < days.Count; i++)
             {
-                Console.Write("Day " + (i+1) + " Profit: $");
+                Console.Write("Day " + (i+1) + " Total profit: $");
                 Console.Write(days[i].Profit);
                 Console.WriteLine(", Weather was " + days[i].weather.WeatherForcast + ", and " + days[i].weather.Temperature + " degrees");
             }
@@ -85,7 +86,7 @@ namespace Lemonade
             switch (type)
             {
                 case "supplies":
-                    if (str == "cups" || str == "lemons" || str == "sugar" || str == "ice" || str == "none")
+                    if (str == "price" || str == "cups" || str == "lemons" || str == "sugar" || str == "ice" || str == "none")
                     {
                         return true;
                     }
@@ -116,7 +117,8 @@ namespace Lemonade
 
         public static void DisplayWeekForcast(List<string> weeksForcast)
         {
-            Console.WriteLine('\n' + "Weather forcast" + '\n');
+            Console.Clear();
+            Console.WriteLine("Weather forcast" + '\n');
             foreach (object weather in weeksForcast)
             {
                 Console.WriteLine(weather);

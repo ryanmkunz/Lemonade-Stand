@@ -87,7 +87,11 @@ namespace Lemonade
                 {
                     UserInterface.DisplayReadyForNextDay();
                     UserInterface.StringInput = Console.ReadLine();
-                } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));                                
+                } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));
+                if (UserInterface.StringInput == "no")
+                {
+                    Environment.Exit(0);
+                }
             }
             GameOver();
         }
@@ -137,7 +141,11 @@ namespace Lemonade
             {
                 UserInterface.DisplayWeekForcast(day.weather.weeksForcast);
                 UserInterface.StringInput = Console.ReadLine();
-            } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));            
+            } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));
+            if (UserInterface.StringInput == "no")
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
