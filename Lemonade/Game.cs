@@ -9,13 +9,7 @@ namespace Lemonade
     {
         //--------------------------------------------
         //TODO
-        //Add weekly forcast
-        //Generate a list of weather conditions for the week at the start of the game
-        //As daily weather conditions are set, limit them to be within a range of the forcasted weather
-        //Add price sensitivity to child classes of Customer
-        //Have end of week report display every 7 days
-        //Make price have more of an impact on demand
-        //Show profit only, not revenue
+        //As daily weather conditions are set, limit them to be within a range of the forcasted weather (Completely redo forcasting)
         //--------------------------------------------
 
         public Player player1;
@@ -57,9 +51,11 @@ namespace Lemonade
             Demand += player1.SugarPerPitcher - sugarBaseline;
             if (player1.PricePerCup > 0.25)
             {
-                //TODO: make this more complicated (realistic)
-                //See notes in Customer class
-                Demand = -1;               
+                Demand =- 1;               
+            }
+            else if (player1.PricePerCup < 0.25)
+            {
+                Demand =+ 2; 
             }
             return Demand;
         }
