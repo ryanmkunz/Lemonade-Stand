@@ -19,6 +19,7 @@ namespace Lemonade
         {
             CupsSold = 0;
             TotalCustomers = 300;
+            Revenue = 0;
             weather = new Weather();
             random = new Random();
         }

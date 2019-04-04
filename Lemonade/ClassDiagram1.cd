@@ -18,12 +18,12 @@
     <Position X="0.5" Y="0.5" Width="1.75" />
     <AssociationLine Name="player1" Type="Lemonade.Player" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="1.375" Y="3.786" />
+        <Point X="1.375" Y="3.594" />
         <Point X="1.375" Y="4.25" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAggAAAAEACEAAAAAAAAAAAAAAAAAQBQAQAABAAEAQ=</HashCode>
+      <HashCode>gAAggAAAAEACEAAAAAAAAAAAAAAAAAQBQAQAABAAAAQ=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -52,7 +52,7 @@
   <Class Name="Lemonade.Store">
     <Position X="3.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAABABAAAAARAAAAAAAAAACACABAEAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAAAABABAAAAARAAAAAAAAAACACABAgAA=</HashCode>
       <FileName>Store.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -79,7 +79,7 @@
   <Class Name="Lemonade.UserInterface">
     <Position X="5.75" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABACAEAAAAQQAAAgAAAAAAAEAAAAAUgAAAAAEAAAABA=</HashCode>
+      <HashCode>ABACAEAAAAQQAAAwAAAAAAAEAAAAAUgAAAAAEAAAABA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>

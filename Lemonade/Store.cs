@@ -14,7 +14,6 @@ namespace Lemonade
         public string SupplyOrder;
         private int OrderQuantity;
         private double OrderCost;
-        public double TotalOrderCost;
 
         public Store()
         {
@@ -26,7 +25,6 @@ namespace Lemonade
 
         public void Resupply(Inventory inventory)
         {
-            TotalOrderCost = 0;
             while (SupplyOrder != "none")
             {
                 do
@@ -42,43 +40,37 @@ namespace Lemonade
                     {
                         UserInterface.DisplayQuantitiyCheck(SupplyOrder);
                         UserInterface.StringInput = Console.ReadLine();
-                    } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput)); // && player can afford purchase);                    
+                    } while (!int.TryParse(UserInterface.StringInput, out UserInterface.BadInput));                   
                     OrderQuantity = int.Parse(UserInterface.StringInput);
                     switch (SupplyOrder)
                     {
-                        case "cups":
-                            inventory.Cups += OrderQuantity;
+                        case "cups":                            
                             OrderCost = OrderQuantity * CupPrice;
+                            CheckBalance(inventory, CupPrice);
+                            inventory.Cups += OrderQuantity;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Cups", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
                             break;
                         case "lemons":
-                            inventory.Lemons += OrderQuantity;
                             OrderCost = OrderQuantity * LemonPrice;
+                            CheckBalance(inventory, LemonPrice);
+                            inventory.Lemons += OrderQuantity;
                             inventory.Money -= OrderCost;
                             UserInterface.DisplayReceipt("Lemons", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
                             break;
                         case "sugar":
-                            inventory.Sugar += OrderQuantity;
                             OrderCost = OrderQuantity * SugarPrice;
+                            CheckBalance(inventory, SugarPrice);
+                            inventory.Sugar += OrderQuantity;
                             inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Cups of Sugar", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
+                            UserInterface.DisplayReceipt("Sugar", OrderQuantity, OrderCost);
                             break;
                         case "ice":
-                            inventory.Ice += OrderQuantity;
                             OrderCost = OrderQuantity * IcePrice;
+                            CheckBalance(inventory, CupPrice);
+                            inventory.Ice += OrderQuantity;
                             inventory.Money -= OrderCost;
-                            UserInterface.DisplayReceipt("Ice cubes", OrderQuantity, OrderCost);
-                            TotalOrderCost += OrderCost;
-                            break;
-                        case "default":
-                            inventory.Cups = 60;
-                            inventory.Lemons = 24;
-                            inventory.Sugar = 24;
-                            inventory.Ice = 24;
+                            UserInterface.DisplayReceipt("Ice", OrderQuantity, OrderCost);
                             break;
                         default:
                             break;
@@ -90,6 +82,16 @@ namespace Lemonade
                 }
                 Console.Clear();
             }
+            SupplyOrder = "";
+        }
+
+        public void CheckBalance(Inventory inventory, double itemPrice)
+        {
+            if (OrderCost > inventory.Money)
+            {
+                OrderQuantity = Convert.ToInt32(Math.Floor((inventory.Money / itemPrice)));
+                OrderCost = itemPrice * OrderQuantity;
+            }            
         }
     }
 }

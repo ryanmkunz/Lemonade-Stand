@@ -8,7 +8,12 @@ namespace Lemonade
     public class Game
     {
         //--------------------------------------------
-        //Make sure player cant have negative money!!!
+        //TODO
+        //Add weekly forcast
+        //Add price sensitivity to child classes of Customer
+        //Add costs to end of day and end of week report
+        //Have end of week report display every 7 days
+        //Make price have more of an impact on demand
         //--------------------------------------------
 
         public Player player1;
@@ -65,7 +70,7 @@ namespace Lemonade
             {
                 day = new Day();
                 Days.Add(day);
-                store.Resupply(player1.inventory);
+                store.Resupply(player1.inventory); 
                 player1.SetRecipe();
                 GetWeather();
                 day.GetDailySales(GetDemand(), player1);
@@ -77,14 +82,8 @@ namespace Lemonade
                     UserInterface.DisplayReadyForNextDay();
                     UserInterface.StringInput = Console.ReadLine();
                 } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));                                
-                ResetDay();
             }
             GameOver();
-        }
-
-        public void ResetDay()
-        {
-            store.SupplyOrder = "";
         }
 
         public void GetAdjustedSales()
@@ -92,6 +91,11 @@ namespace Lemonade
             if (player1.TotalCupsMade < day.CupsSold)
             {
                 day.CupsSold = player1.TotalCupsMade;
+                day.Revenue = day.CupsSold * player1.PricePerCup;
+                player1.inventory.Money += day.Revenue;
+            }
+            else
+            {
                 day.Revenue = day.CupsSold * player1.PricePerCup;
                 player1.inventory.Money += day.Revenue;
             }
@@ -103,6 +107,10 @@ namespace Lemonade
             UserInterface.DisplayPlayAgainPrompt();
             if ("yes" == Console.ReadLine())
             {
+                player1.inventory.Cups = 0;
+                player1.inventory.Lemons = 0;
+                player1.inventory.Sugar = 0;
+                player1.inventory.Ice = 0;
                 RunGame();
             }
             else

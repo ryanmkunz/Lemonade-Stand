@@ -21,8 +21,8 @@ namespace Lemonade
             }
             set
             {
-                money = value;
-                if (money < 0)
+                money = Math.Round(value, 2);
+                if (money < 0.01)
                 {
                     money = 0;
                 }
