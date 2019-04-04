@@ -14,8 +14,7 @@ namespace Lemonade
 
         public override bool IsBuying(int demand, Player player)
         {
-            //OldPerson likes recipes with less sugar 
-            if (player.SugarPerPitcher < 4)
+            if (player.SugarPerPitcher < 4 || player.PricePerCup < 0.20)
             {
                 return true;
             }

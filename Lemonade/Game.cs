@@ -7,11 +7,6 @@ namespace Lemonade
 {
     public class Game
     {
-        //--------------------------------------------
-        //TODO
-        //As daily weather conditions are set, limit them to be within a range of the forcasted weather (Completely redo forcasting)
-        //--------------------------------------------
-
         public Player player1;
         public int Duration;        
         public int Demand;
