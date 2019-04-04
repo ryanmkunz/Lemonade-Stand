@@ -116,10 +116,12 @@ namespace Lemonade
 
         public static void DisplayWeekForcast(List<string> weeksForcast)
         {
+            Console.WriteLine('\n' + "Weather forcast" + '\n');
             foreach (object weather in weeksForcast)
             {
                 Console.WriteLine(weather);
             }
+            Console.WriteLine('\n' + "Ready to play?");
         }
     }
 }

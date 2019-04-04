@@ -72,7 +72,10 @@ namespace Lemonade
             {
                 day = new Day();
                 Days.Add(day);
-                GetWeatherWeek();
+                if (i == 0 || i % 7 == 0)
+                {
+                    GetWeatherWeek();
+                }                
                 store.Resupply(player1.inventory); 
                 player1.SetRecipe();
                 GetWeather();
@@ -130,7 +133,11 @@ namespace Lemonade
         public void GetWeatherWeek()
         {
             day.weather.GetWeeksForcast();
-            UserInterface.DisplayWeekForcast(day.weather.weeksForcast);
+            do
+            {
+                UserInterface.DisplayWeekForcast(day.weather.weeksForcast);
+                UserInterface.StringInput = Console.ReadLine();
+            } while (!UserInterface.InputValidation(UserInterface.StringInput, "yesNo"));            
         }
     }
 }

@@ -71,7 +71,7 @@ namespace Lemonade
             for (int i = 0; i < 7; i++)
             {
                 GetTemperature();                
-                weeksForcast.Add(Temperature.ToString() + " degrees, and " + GetRandomConditions());
+                weeksForcast.Add("Day " + (i+1) + ": " + Temperature.ToString() + " degrees, and " + GetRandomConditions());
             }
             
         }
